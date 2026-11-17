@@ -1,0 +1,213 @@
+/* App container: Sidebar + Content layout */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.app-sidebar {
+  width: 220px;
+  min-height: 100vh;
+}
+
+.sidebar-brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #343a40;
+  padding: 20px;
+  color: white;
+  height: 100vh;
+  width: 220px; /* Sidebar width */
+}
+
+/* Content section */
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px;
+  min-width: 0;
+}
+
+.tool-panel {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tool-panel h1 {
+  font-size: 1.8rem;
+}
+
+.tool-description {
+  color: #6c757d;
+}
+
+.caption-card {
+  max-width: 560px;
+}
+
+.caption-preview,
+.caption-placeholder {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background-color: #f1f3f5;
+}
+
+.caption-placeholder,
+.canvas-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  color: #6c757d;
+  text-align: center;
+  background-color: #f1f3f5;
+}
+
+.caption-result {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.sticker-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.subject-preview {
+  display: block;
+  max-width: 100%;
+  max-height: 220px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.sticker-canvas-wrap {
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+}
+
+.sticker-canvas,
+.canvas-placeholder {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  background-color: #f1f3f5;
+}
+
+.sticker-canvas.is-draggable {
+  cursor: grab;
+  touch-action: none;
+}
+
+.sticker-canvas.is-draggable:active {
+  cursor: grabbing;
+}
+
+.canvas-placeholder {
+  min-height: 220px;
+}
+
+/* Header styles */
+header {
+  background-color: #343a40;
+  padding: 15px;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header .nav-link {
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header .nav-link:hover {
+  color: #adb5bd;
+}
+
+header .nav-link.text-secondary {
+  color: #adb5bd;
+}
+
+header .form-control {
+  max-width: 300px;
+  margin-right: 20px;
+}
+
+header .btn {
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+header .btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+header .btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+}
+
+header .btn-outline-light:hover {
+  background-color: #fff;
+  color: #343a40;
+}
+
+/* Mobile responsive adjustments for header */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .app-sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .app-sidebar .nav {
+    flex-direction: row;
+  }
+
+  .app-sidebar .nav-link {
+    flex: 1;
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .sticker-controls {
+    grid-template-columns: 1fr;
+  }
+
+  header .form-control {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  header .text-end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Mobile sidebar adjustments */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
